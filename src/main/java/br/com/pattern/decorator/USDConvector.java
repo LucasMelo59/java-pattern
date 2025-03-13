@@ -2,7 +2,7 @@ package br.com.pattern.decorator;
 
 import java.math.BigDecimal;
 
-public class USDConvector implements CurrencyConvectorBRL {
+public class USDConvector implements CurrencyConvector {
 
     private final BigDecimal cotation = BigDecimal.valueOf(0.5);
 

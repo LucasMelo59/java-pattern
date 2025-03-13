@@ -1,6 +1,7 @@
 package br.com.pattern.singleton;
 
-import br.com.pattern.decorator.CurrencyConvectorBRL;
+import br.com.pattern.decorator.CurrencyConvector;
+import br.com.pattern.decorator.TaxSpreadDecorator;
 import br.com.pattern.decorator.EUROConvector;
 import br.com.pattern.decorator.USDConvector;
 
@@ -10,13 +11,13 @@ public enum Currency {
     EURO("euro", new EUROConvector());
 
 
-    private String descricao;
+    private final String descricao;
 
-    private CurrencyConvectorBRL convector;
+    private final CurrencyConvector convector;
     private
 
 
-    Currency(String descricao, CurrencyConvectorBRL convector) {
+    Currency(String descricao, CurrencyConvector convector) {
         this.descricao = descricao;
         this.convector = convector;
     }
@@ -25,15 +26,8 @@ public enum Currency {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public CurrencyConvectorBRL getConvector() {
+    public CurrencyConvector getConvector() {
         return convector;
     }
 
-    public void setConvector(CurrencyConvectorBRL convector) {
-        this.convector = convector;
-    }
 }
